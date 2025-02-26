@@ -48,7 +48,7 @@ export default function BasicInfo({ product }: ProductDetailProps) {
               </p>
               <p className="text-black text-3xl font-bold mt-1 mb-4">
                 {discountedPrice.toLocaleString()} 원{" "}
-                <span className="text-3xl text-red-600">{product.discountRate}%</span>
+                <span className="text-3xl text-red">{product.discountRate}%</span>
               </p>
             </div>
           </div>
@@ -69,12 +69,13 @@ export default function BasicInfo({ product }: ProductDetailProps) {
 
           <div className="py-4 border-t h-full flex justify-end items-end">
             <p className="text-xl font-bold mr-4">총 합계 금액 </p>
-            <p className="text-red-500 text-3xl font-bold">{discountedPrice.toLocaleString()} 원</p>
+            <p className="text-red text-3xl font-bold mr-2">{discountedPrice.toLocaleString()}</p>
+            <p className="text-green text-xl font-bold">원</p>
           </div>
 
           <div className="pt-4 flex space-x-4">
             <button className="flex-1 py-3 text-white bg-gray-800">장바구니</button>
-            <button className="flex-1 py-3 text-white bg-red-600">구매하기</button>
+            <button className="flex-1 py-3 text-white bg-red">구매하기</button>
           </div>
         </div>
       </div>
