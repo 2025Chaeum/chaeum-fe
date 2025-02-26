@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ProductDetail } from "@/types/product-detail";
+import Button from "@/components/Button";
 
 interface ProductDetailProps {
   product: ProductDetail;
@@ -22,13 +23,13 @@ export default function BasicInfo({ product }: ProductDetailProps) {
 
           <div className="mt-6 px-10 py-4 border w-full flex justify-between items-center">
             <div className="flex items-center">
-              <span className="text-lg font-bold">리뷰평점</span>
+              <span className="text-lg font-medium">리뷰평점</span>
               <span className="ml-2 text-black-500">★★★★★</span>
               <span className="ml-2">{product.reviewRating.toFixed(2)}</span>
             </div>
 
             <div className="flex items-center">
-              <span className="text-lg font-bold">상품리뷰</span>
+              <span className="text-lg font-medium">상품리뷰</span>
               <span className="ml-2 text-gray-500">
                 ({product.reviewList.length.toLocaleString()})
               </span>
@@ -48,7 +49,7 @@ export default function BasicInfo({ product }: ProductDetailProps) {
               </p>
               <p className="text-black text-3xl font-bold mt-1 mb-4">
                 {discountedPrice.toLocaleString()} 원{" "}
-                <span className="text-3xl text-red">{product.discountRate}%</span>
+                <span className="text-3xl text-mainRed">{product.discountRate}%</span>
               </p>
             </div>
           </div>
@@ -69,13 +70,15 @@ export default function BasicInfo({ product }: ProductDetailProps) {
 
           <div className="py-4 border-t h-full flex justify-end items-end">
             <p className="text-xl font-bold mr-4">총 합계 금액 </p>
-            <p className="text-red text-3xl font-bold mr-2">{discountedPrice.toLocaleString()}</p>
+            <p className="text-mainRed text-3xl font-bold mr-2">
+              {discountedPrice.toLocaleString()}
+            </p>
             <p className="text-green text-xl font-bold">원</p>
           </div>
 
           <div className="pt-4 flex space-x-4">
-            <button className="flex-1 py-3 text-white bg-gray-800">장바구니</button>
-            <button className="flex-1 py-3 text-white bg-red">구매하기</button>
+            <Button>장바구니</Button>
+            <Button color="bg-mainRed">구매하기</Button>
           </div>
         </div>
       </div>
