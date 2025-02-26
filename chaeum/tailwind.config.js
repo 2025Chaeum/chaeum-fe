@@ -6,6 +6,10 @@ export const content = [
   "./src/**/*.{js,ts,jsx,tsx}",
 ];
 export const theme = {
-  extend: {},
+  extend: {
+    fontFamily: {
+      pretendard: ["Pretendard", "sans-serif"],
+    },
+  },
 };
 export const plugins = [];
