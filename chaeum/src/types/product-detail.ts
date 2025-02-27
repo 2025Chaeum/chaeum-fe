@@ -25,6 +25,6 @@ export interface ProductDetail {
   reviewRating: number;
   reviewList: Review[];
   mainImage: string;
-  detailImages: string[];
+  detailImages: string;
   inquiries: Inquiry[];
 }

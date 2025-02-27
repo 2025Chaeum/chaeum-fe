@@ -16,7 +16,7 @@ export async function fetchMockProductById(id: number): Promise<ProductDetail> {
             date: "2024-02-26",
             rating: 5,
             content: "너무 편하고 고급스럽습니다!",
-            reviewImage: "/images/review1.jpg",
+            reviewImage: "/images/test-sofa.png",
           },
           {
             userName: "이영희",
@@ -26,7 +26,7 @@ export async function fetchMockProductById(id: number): Promise<ProductDetail> {
           },
         ],
         mainImage: "/images/test-sofa.png",
-        detailImages: ["/images/sofa-detail1.jpg", "/images/sofa-detail2.jpg"],
+        detailImages: "/images/test-sofa.png",
         inquiries: [
           {
             inquiryId: 1,

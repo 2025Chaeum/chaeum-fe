@@ -2,15 +2,15 @@ import Image from "next/image";
 import { ProductDetail } from "@/types/product-detail";
 import Button from "@/components/Button";
 
-interface ProductDetailProps {
+interface BasicInfoProps {
   product: ProductDetail;
 }
 
-export default function BasicInfo({ product }: ProductDetailProps) {
+export default function BasicInfo({ product }: BasicInfoProps) {
   const discountedPrice = Math.round(product.originalPrice * (1 - product.discountRate / 100));
 
   return (
-    <div className="max-w-screen-lg mx-auto px-4">
+    <div className="max-w-screen-lg mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col items-center">
           <Image
@@ -81,16 +81,6 @@ export default function BasicInfo({ product }: ProductDetailProps) {
             <Button color="bg-mainRed">구매하기</Button>
           </div>
         </div>
-      </div>
-
-      <div className="w-full flex border-t mt-8">
-        <button className="flex-grow py-3 text-gray-600 border-b-2 border-black">상품정보</button>
-        <button className="flex-grow py-3 text-gray-600">
-          상품리뷰({product.reviewList.length})
-        </button>
-        <button className="flex-grow py-3 text-gray-600">
-          상품Q&A({product.inquiries.length})
-        </button>
       </div>
     </div>
   );
