@@ -25,6 +25,11 @@ export default function QnASection({ inquiries }: QnASectionProps) {
     setSelectedInquiry(selectedInquiry === id ? null : id);
   };
 
+  const maskName = (name: string) => {
+    if (name.length < 3) return name;
+    return name[0] + "*" + name.slice(2);
+  };
+
   return (
     <div className="container mx-auto">
       <table className="w-full border-collapse">
@@ -49,7 +54,7 @@ export default function QnASection({ inquiries }: QnASectionProps) {
                   {inquiry.isAnswered ? <span>답변 완료</span> : <span>답변 대기</span>}
                 </td>
                 <td className="p-4 align-middle">{inquiry.title}</td>
-                <td className="p-4 align-middle">{inquiry.userName}</td>
+                <td className="p-4 align-middle">{maskName(inquiry.userName)}</td>
                 <td className="p-4 align-middle">{inquiry.date}</td>
               </tr>
 
