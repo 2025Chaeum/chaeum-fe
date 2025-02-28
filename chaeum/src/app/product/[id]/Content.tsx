@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Review, Inquiry } from "@/types/product-detail";
 import Image from "next/image";
 import ReviewSection from "./ReviewSection";
+import QnASection from "./QnASection";
 
 interface ContentProps {
   detailImage: string;
@@ -77,7 +78,11 @@ export default function Content({
       </section>
 
       <section ref={qaRef} className="mt-20">
-        <h2 className="text-2xl font-bold pb-4 border-b border-black">상품 Q&A</h2>
+        <div className="flex justify-between items-center pb-2 border-b border-black">
+          <h2 className="text-2xl font-bold">상품 Q&A</h2>
+          <button className="bg-black text-white px-6 py-3">상품 문의하기</button>
+        </div>
+        <QnASection inquiries={inquiries} />
       </section>
     </div>
   );
