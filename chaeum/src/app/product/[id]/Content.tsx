@@ -36,21 +36,21 @@ export default function Content({
     <div className="container p-6 mt-10">
       <nav className="flex border-b w-full">
         <a
-          className="flex-1 p-4 text-center cursor-pointer"
+          className="flex-1 p-4 text-center cursor-pointer border border-black"
           role="button"
           onClick={() => scrollToSection(infoRef)}
         >
           상품정보
         </a>
         <a
-          className="flex-1 p-4 text-center cursor-pointer"
+          className="flex-1 p-4 text-center cursor-pointer border border-black border-l-0"
           role="button"
           onClick={() => scrollToSection(reviewRef)}
         >
           상품리뷰 <span className="text-mainRed ml-2">({reviewList.length})</span>
         </a>
         <a
-          className="flex-1 p-4 text-center cursor-pointer"
+          className="flex-1 p-4 text-center cursor-pointer border border-black border-l-0"
           role="button"
           onClick={() => scrollToSection(qaRef)}
         >
@@ -59,7 +59,7 @@ export default function Content({
       </nav>
 
       <section ref={infoRef} className="mt-20">
-        <h2 className="text-2xl font-bold pb-4 border-b border-black">상품 상세 이미지</h2>
+        <h2 className="text-2xl pb-4 border-b border-black">상품정보</h2>
         <article className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <Image
             src={detailImage}
@@ -73,13 +73,13 @@ export default function Content({
       </section>
 
       <section ref={reviewRef} className="mt-20">
-        <h2 className="text-2xl font-bold pb-4 border-b border-black">상품리뷰</h2>
+        <h2 className="text-2xl pb-4 border-b border-black">상품리뷰</h2>
         <ReviewSection reviewRating={reviewRating} reviewList={reviewList} />
       </section>
 
       <section ref={qaRef} className="mt-20">
         <div className="flex justify-between items-center pb-2 border-b border-black">
-          <h2 className="text-2xl font-bold">상품 Q&A</h2>
+          <h2 className="text-2xl">상품 Q&A</h2>
           <button className="bg-black text-white px-6 py-3">상품 문의하기</button>
         </div>
         <QnASection inquiries={inquiries} />
