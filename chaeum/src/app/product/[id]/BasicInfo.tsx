@@ -1,6 +1,10 @@
+"use client";
 import Image from "next/image";
 import { ProductDetail } from "@/types/product-detail";
 import Button from "@/components/Button";
+import StarRating from "@/components/StarRating";
+import QuantitySelector from "@/components/QuantitySelector";
+import { useState } from "react";
 
 interface BasicInfoProps {
   product: ProductDetail;
@@ -8,6 +12,7 @@ interface BasicInfoProps {
 
 export default function BasicInfo({ product }: BasicInfoProps) {
   const discountedPrice = Math.round(product.originalPrice * (1 - product.discountRate / 100));
+  const [orderQuantity, setOrderQuantity] = useState(1);
 
   return (
     <div className="max-w-screen-lg mx-auto">
@@ -23,9 +28,9 @@ export default function BasicInfo({ product }: BasicInfoProps) {
 
           <div className="mt-6 px-10 py-4 border w-full flex justify-between items-center">
             <div className="flex items-center">
-              <span className="text-lg font-medium">리뷰평점</span>
-              <span className="ml-2 text-black-500">★★★★★</span>
-              <span className="ml-2">{product.reviewRating.toFixed(2)}</span>
+              <span className="text-lg font-medium mr-3">리뷰평점</span>
+              <StarRating rating={product.reviewRating} />
+              <span className="ml-2">{product.reviewRating.toFixed(1)}</span>
             </div>
 
             <div className="flex items-center">
@@ -61,17 +66,13 @@ export default function BasicInfo({ product }: BasicInfoProps) {
 
           <div className="py-4 border-t h-full flex items-center">
             <p className="text-black-600 mr-6">주문 수량</p>
-            <div className="flex items-center space-x-3">
-              <button className="px-3 py-1 border rounded">−</button>
-              <span className="text-lg font-medium">1</span>
-              <button className="px-3 py-1 border rounded">+</button>
-            </div>
+            <QuantitySelector initialQuantity={orderQuantity} onChange={setOrderQuantity} />
           </div>
 
           <div className="py-4 border-t h-full flex justify-end items-end">
             <p className="text-xl font-bold mr-4">총 합계 금액 </p>
             <p className="text-mainRed text-3xl font-bold mr-2">
-              {discountedPrice.toLocaleString()}
+              {(discountedPrice * orderQuantity).toLocaleString()}
             </p>
             <p className="text-green text-xl font-bold">원</p>
           </div>
