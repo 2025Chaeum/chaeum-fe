@@ -7,6 +7,7 @@ import Image from "next/image";
 import ReviewSection from "./ReviewSection";
 import QnASection from "./QnASection";
 import { useQna } from "@/context/QnaContext";
+import Button from "@/components/Button";
 
 interface ContentProps {
   id: number;
@@ -90,15 +91,14 @@ export default function Content({
       <section ref={qaRef} className="mt-20">
         <div className="flex justify-between items-center pb-2 border-b border-black">
           <h2 className="text-2xl">상품 Q&A</h2>
-          <button
-            className="bg-black text-white px-6 py-3"
+          <Button
             onClick={() => {
               setProduct(name, mainImage);
               router.push(`/product/${id}/qna`);
             }}
           >
             상품 문의하기
-          </button>
+          </Button>
         </div>
         <QnASection inquiries={inquiries} />
       </section>
