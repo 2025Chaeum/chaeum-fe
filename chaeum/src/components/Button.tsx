@@ -10,7 +10,7 @@ interface ButtonProps {
 function Button({ children, color = "bg-black", onClick }: ButtonProps) {
   return (
     <button
-      className={`flex-1 py-3 text-white ${color} transition duration-200 hover:opacity-80`}
+      className={`w-[200px] py-3 text-white ${color} transition duration-200 hover:opacity-80`}
       onClick={onClick}
     >
       {children}
