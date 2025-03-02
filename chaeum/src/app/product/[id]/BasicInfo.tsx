@@ -77,7 +77,7 @@ export default function BasicInfo({ product }: BasicInfoProps) {
             <p className="text-green text-xl font-bold">원</p>
           </div>
 
-          <div className="pt-4 flex space-x-4">
+          <div className="pt-4 flex space-x-4 justify-end">
             <Button>장바구니</Button>
             <Button color="bg-mainRed">구매하기</Button>
           </div>

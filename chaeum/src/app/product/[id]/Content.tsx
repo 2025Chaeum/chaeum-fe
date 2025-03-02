@@ -1,12 +1,18 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useRef } from "react";
 import { Review, Inquiry } from "@/types/product-detail";
 import Image from "next/image";
 import ReviewSection from "./ReviewSection";
 import QnASection from "./QnASection";
+import { useQna } from "@/context/QnaContext";
+import Button from "@/components/Button";
 
 interface ContentProps {
+  id: number;
+  name: string;
+  mainImage: string;
   detailImage: string;
   inquiries?: Inquiry[];
   reviewRating?: number;
@@ -14,11 +20,16 @@ interface ContentProps {
 }
 
 export default function Content({
+  id,
+  name,
+  mainImage,
   detailImage,
   inquiries = [],
   reviewRating = 0,
   reviewList = [],
 }: ContentProps) {
+  const { setProduct } = useQna();
+  const router = useRouter();
   const infoRef = useRef<HTMLElement | null>(null);
   const reviewRef = useRef<HTMLElement | null>(null);
   const qaRef = useRef<HTMLElement | null>(null);
@@ -80,7 +91,14 @@ export default function Content({
       <section ref={qaRef} className="mt-20">
         <div className="flex justify-between items-center pb-2 border-b border-black">
           <h2 className="text-2xl">상품 Q&A</h2>
-          <button className="bg-black text-white px-6 py-3">상품 문의하기</button>
+          <Button
+            onClick={() => {
+              setProduct(name, mainImage);
+              router.push(`/product/${id}/qna`);
+            }}
+          >
+            상품 문의하기
+          </Button>
         </div>
         <QnASection inquiries={inquiries} />
       </section>
