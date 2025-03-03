@@ -1,16 +1,19 @@
-interface Product {
-  id: number;
-  name: string;
-  code: string;
-  price: number;
-  discount: number;
-}
+'use client';
+
+import { Product } from '@/types/admin-product';
+import { useRouter } from 'next/navigation';
 
 interface ProductListProps {
   products: Product[];
 }
 
 export default function ProductList({ products }: ProductListProps) {
+  const router = useRouter();
+
+  const goToEditPage = (productCode: string) => {
+    router.push(`/admin/product/${productCode}`);
+  };
+
   return (
     <table className="w-full border-collapse border border-gray-300">
       <thead>
@@ -24,7 +27,7 @@ export default function ProductList({ products }: ProductListProps) {
       </thead>
       <tbody>
         {products.map((product, index) => (
-          <tr key={product.id} className="text-center">
+          <tr key={product.id} className="text-center" onClick={() => goToEditPage(product.code)}>
             <td className="border p-2">{index + 1}</td>
             <td className="border p-2">{product.name}</td>
             <td className="border p-2">{product.code}</td>
