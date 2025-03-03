@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import { useRef } from "react";
-import { Review, Inquiry } from "@/types/product-detail";
-import Image from "next/image";
-import ReviewSection from "./ReviewSection";
-import QnASection from "./QnASection";
-import { useQna } from "@/context/QnaContext";
-import Button from "@/components/Button";
+import { useRouter } from 'next/navigation';
+import { useRef } from 'react';
+import { Review, Inquiry } from '@/types/product-detail';
+import Image from 'next/image';
+import ReviewSection from './ReviewSection';
+import QnASection from './QnASection';
+import { useQna } from '@/context/QnaContext';
+import Button from '@/components/Button';
 
 interface ContentProps {
   id: number;
@@ -38,7 +38,7 @@ export default function Content({
     if (ref.current) {
       window.scrollTo({
         top: ref.current.offsetTop - 100,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     }
   };

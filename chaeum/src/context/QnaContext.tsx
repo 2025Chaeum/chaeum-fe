@@ -1,5 +1,5 @@
-"use client";
-import { createContext, useContext, useState } from "react";
+'use client';
+import { createContext, useContext, useState } from 'react';
 
 interface QnaContextProps {
   productName: string;
@@ -10,8 +10,8 @@ interface QnaContextProps {
 const QnaContext = createContext<QnaContextProps | undefined>(undefined);
 
 export const QnaProvider = ({ children }: { children: React.ReactNode }) => {
-  const [productName, setProductName] = useState("");
-  const [productImage, setProductImage] = useState("");
+  const [productName, setProductName] = useState('');
+  const [productImage, setProductImage] = useState('');
 
   const setProduct = (name: string, image: string) => {
     setProductName(name);
@@ -27,6 +27,6 @@ export const QnaProvider = ({ children }: { children: React.ReactNode }) => {
 
 export const useQna = () => {
   const context = useContext(QnaContext);
-  if (!context) throw new Error("useQna must be used within a QnaProvider");
+  if (!context) throw new Error('useQna must be used within a QnaProvider');
   return context;
 };

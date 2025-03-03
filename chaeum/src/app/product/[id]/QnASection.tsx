@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import React from "react";
-import Pagination from "@/components/Pagination";
-import { Inquiry } from "@/types/product-detail";
+import { useState } from 'react';
+import React from 'react';
+import Pagination from '@/components/Pagination';
+import { Inquiry } from '@/types/product-detail';
 
 interface QnASectionProps {
   inquiries: Inquiry[];
@@ -27,7 +27,7 @@ export default function QnASection({ inquiries }: QnASectionProps) {
 
   const maskName = (name: string) => {
     if (name.length < 3) return name;
-    return name[0] + "*" + name.slice(2);
+    return name[0] + '*' + name.slice(2);
   };
 
   return (

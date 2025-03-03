@@ -1,10 +1,10 @@
-"use client";
-import Image from "next/image";
-import { ProductDetail } from "@/types/product-detail";
-import Button from "@/components/Button";
-import StarRating from "@/components/StarRating";
-import QuantitySelector from "@/components/QuantitySelector";
-import { useState } from "react";
+'use client';
+import Image from 'next/image';
+import { ProductDetail } from '@/types/product-detail';
+import Button from '@/components/Button';
+import StarRating from '@/components/StarRating';
+import QuantitySelector from '@/components/QuantitySelector';
+import { useState } from 'react';
 
 interface BasicInfoProps {
   product: ProductDetail;
@@ -53,7 +53,7 @@ export default function BasicInfo({ product }: BasicInfoProps) {
                 {product.originalPrice.toLocaleString()} 원
               </p>
               <p className="text-black text-3xl font-bold mt-1 mb-4">
-                {discountedPrice.toLocaleString()} 원{" "}
+                {discountedPrice.toLocaleString()} 원{' '}
                 <span className="text-3xl text-mainRed">{product.discountRate}%</span>
               </p>
             </div>

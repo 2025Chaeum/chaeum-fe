@@ -1,7 +1,7 @@
-import { fetchMockProductById } from "@/api/mock-product";
-import BasicInfo from "./BasicInfo";
-import Content from "./Content";
-import { ProductDetail } from "@/types/product-detail";
+import { fetchMockProductById } from '@/api/mock-product';
+import BasicInfo from './BasicInfo';
+import Content from './Content';
+import { ProductDetail } from '@/types/product-detail';
 
 interface ProductPageProps {
   params: { id: number };

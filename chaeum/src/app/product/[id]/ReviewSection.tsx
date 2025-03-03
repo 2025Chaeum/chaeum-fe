@@ -1,8 +1,8 @@
-import ReviewSummary from "./review/ReviewSummary";
-import ReviewItem from "./review/ReviewItem";
-import Pagination from "@/components/Pagination";
-import { Review } from "@/types/product-detail";
-import { useState } from "react";
+import ReviewSummary from './review/ReviewSummary';
+import ReviewItem from './review/ReviewItem';
+import Pagination from '@/components/Pagination';
+import { Review } from '@/types/product-detail';
+import { useState } from 'react';
 
 interface ReviewSectionProps {
   reviewRating: number;
