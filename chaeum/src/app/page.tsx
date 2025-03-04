@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Image from 'next/image';
 import MainImage from 'public/images/test-main.png';
@@ -10,6 +11,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 right-0 z-10">
           <Header />
         </div>
+        <Footer />
       </div>
     </div>
   );
