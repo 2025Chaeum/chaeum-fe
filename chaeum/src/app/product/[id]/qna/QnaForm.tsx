@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useQna } from "@/context/QnaContext";
-import Button from "@/components/Button";
+import Image from 'next/image';
+import { useQna } from '@/context/QnaContext';
+import Button from '@/components/Button';
 
 export default function QnaForm() {
   const { productName, productImage } = useQna();

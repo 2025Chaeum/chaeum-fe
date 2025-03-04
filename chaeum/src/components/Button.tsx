@@ -1,5 +1,5 @@
-"use client";
-import React from "react";
+'use client';
+import React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -7,7 +7,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-function Button({ children, color = "bg-black", onClick }: ButtonProps) {
+function Button({ children, color = 'bg-black', onClick }: ButtonProps) {
   return (
     <button
       className={`w-[200px] py-3 text-white ${color} transition duration-200 hover:opacity-80`}

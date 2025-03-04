@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 interface PaginationProps {
   totalItems: number;
@@ -23,7 +23,7 @@ export default function Pagination({
     <div className="flex justify-center mt-6 space-x-2">
       <button
         className={`px-3 py-1 border rounded ${
-          currentPage === 1 ? "text-gray-500 cursor-not-allowed" : "text-gray-600"
+          currentPage === 1 ? 'text-gray-500 cursor-not-allowed' : 'text-gray-600'
         }`}
         onClick={() => onPageChange(1)}
         disabled={currentPage === 1}
@@ -33,7 +33,7 @@ export default function Pagination({
 
       <button
         className={`px-3 py-1 border rounded ${
-          currentPage === 1 ? "text-gray-500 cursor-not-allowed" : "text-gray-600"
+          currentPage === 1 ? 'text-gray-500 cursor-not-allowed' : 'text-gray-600'
         }`}
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
@@ -47,7 +47,7 @@ export default function Pagination({
           <button
             key={pageNumber}
             className={`px-3 py-1 border rounded ${
-              currentPage === pageNumber ? "bg-black text-white" : "text-gray-600"
+              currentPage === pageNumber ? 'bg-black text-white' : 'text-gray-600'
             }`}
             onClick={() => onPageChange(pageNumber)}
           >
@@ -58,7 +58,7 @@ export default function Pagination({
 
       <button
         className={`px-3 py-1 border rounded ${
-          currentPage === totalPages ? "text-gray-500 cursor-not-allowed" : "text-gray-600"
+          currentPage === totalPages ? 'text-gray-500 cursor-not-allowed' : 'text-gray-600'
         }`}
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
@@ -68,7 +68,7 @@ export default function Pagination({
 
       <button
         className={`px-3 py-1 border rounded ${
-          currentPage === totalPages ? "text-gray-500 cursor-not-allowed" : "text-gray-600"
+          currentPage === totalPages ? 'text-gray-500 cursor-not-allowed' : 'text-gray-600'
         }`}
         onClick={() => onPageChange(totalPages)}
         disabled={currentPage === totalPages}
