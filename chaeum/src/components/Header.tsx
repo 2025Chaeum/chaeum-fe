@@ -134,7 +134,7 @@ export default function Header() {
       <div className="flex items-center justify-between max-w-[80%] min-w-[1280px] mx-auto py-7">
         <Link
           href="/"
-          className={`text-4xl font-bold ${isMainPage ? 'text-white' : 'text-deepBlue'}`}
+          className={`text-3xl font-bold ${isMainPage ? 'text-white' : 'text-deepBlue'}`}
         >
           C H A E U M
         </Link>
@@ -163,7 +163,7 @@ export default function Header() {
                 >
                   <Link
                     href={category.route}
-                    className="transition-colors duration-300 hover:underline text-xl font-semibold"
+                    className="transition-colors duration-300 hover:underline text-lg font-semibold"
                   >
                     {category.name}
                   </Link>
@@ -176,18 +176,18 @@ export default function Header() {
         <div
           className={`flex items-center justify-between ${
             isMainPage ? 'bg-white bg-opacity-20' : 'bg-lightGray_200'
-          } rounded-full px-4 py-2 w-64`}
+          } rounded-full px-4 py-2 w-60`}
         >
           <input
             type="text"
             className={`ml-3 w-[70%] bg-transparent focus:outline-none text-lg font-normal ${
-              isMainPage ? 'text-white placeholder-white' : ''
+              isMainPage ? 'text-darkBrown placeholder-white' : ''
             }`}
           />
           <SearchIcon fill={isMainPage ? 'white' : 'black'} className="cursor-pointer" />
         </div>
 
-        <div className="flex space-x-8 text-lg font-medium">{renderNavButtons()}</div>
+        <div className="flex space-x-8 text-base font-normal">{renderNavButtons()}</div>
       </div>
 
       {/* 메가 메뉴 */}
@@ -203,13 +203,13 @@ export default function Header() {
               {categories.map((category) => (
                 <div key={category.name} className="space-y-4">
                   {category.name === '홈' ? (
-                    <Link href="/" className="text-xl font-semibold hover:underline">
+                    <Link href="/" className="text-lg font-semibold hover:underline">
                       홈으로
                     </Link>
                   ) : (
                     <Link
                       href={category.route}
-                      className="text-xl font-semibold border-b pb-4 block hover:underline"
+                      className="text-lg font-semibold border-b pb-4 block hover:underline"
                     >
                       {category.name}
                     </Link>
@@ -218,7 +218,7 @@ export default function Header() {
                     {category.subcategories.map((sub) => (
                       <li
                         key={sub}
-                        className="text-lg font-medium text-darkGray hover:text-black hover:underline transition-colors cursor-pointer"
+                        className="text-base font-medium text-darkGray hover:text-black hover:underline transition-colors cursor-pointer"
                       >
                         <Link
                           href={`/category/${encodeURIComponent(category.name)}/${encodeURIComponent(sub)}`}
