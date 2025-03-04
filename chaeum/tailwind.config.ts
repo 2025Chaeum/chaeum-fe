@@ -16,6 +16,20 @@ export default {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
+      keyframes: {
+        slideInRight: {
+          '0%': { opacity: '0', transform: 'translateX(50px) translateY(0)' },
+          '100%': { opacity: '1', transform: 'translateX(0)  translateY(0)' },
+        },
+        slideInLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-50px)  translateY(0)' },
+          '100%': { opacity: '1', transform: 'translateX(0)  translateY(0)' },
+        },
+      },
+      animation: {
+        'slide-in-right': 'slideInRight 1s ease-out forwards',
+        'slide-in-left': 'slideInLeft 1.2s ease-out forwards',
+      },
     },
   },
   plugins: [],
