@@ -131,7 +131,7 @@ export default function Header() {
           : 'bg-white border-b'
       }`}
     >
-      <div className="flex items-center justify-between max-w-[2000px] mx-auto py-8">
+      <div className="flex items-center justify-between max-w-[80%] min-w-[1280px] mx-auto py-7">
         <Link
           href="/"
           className={`text-4xl font-bold ${isMainPage ? 'text-white' : 'text-deepBlue'}`}
@@ -180,7 +180,6 @@ export default function Header() {
         >
           <input
             type="text"
-            placeholder="검색"
             className={`ml-3 w-[70%] bg-transparent focus:outline-none text-lg font-normal ${
               isMainPage ? 'text-white placeholder-white' : ''
             }`}
@@ -199,7 +198,7 @@ export default function Header() {
           onMouseEnter={() => setHoveredCategory(hoveredCategory)}
           onMouseLeave={() => setHoveredCategory(null)}
         >
-          <div className="max-w-[2000px] mx-auto py-9">
+          <div className="max-w-[80%] min-w-[1280px] mx-auto py-9">
             <div className="grid grid-cols-5 gap-20">
               {categories.map((category) => (
                 <div key={category.name} className="space-y-4">
