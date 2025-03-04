@@ -176,12 +176,12 @@ export default function Header() {
         <div
           className={`flex items-center justify-between ${
             isMainPage ? 'bg-white bg-opacity-20' : 'bg-lightGray_200'
-          } rounded-full px-4 py-2 w-64`}
+          } rounded-full px-4 py-2 w-60`}
         >
           <input
             type="text"
             className={`ml-3 w-[70%] bg-transparent focus:outline-none text-lg font-normal ${
-              isMainPage ? 'text-white placeholder-white' : ''
+              isMainPage ? 'text-darkBrown placeholder-white' : ''
             }`}
           />
           <SearchIcon fill={isMainPage ? 'white' : 'black'} className="cursor-pointer" />
