@@ -10,7 +10,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Header />
-      <div className="mx-auto max-w-[80%] py-[100px]">{children}</div>
+      <div className="mx-auto max-w-[80%] min-w-[1280px] py-[100px]">{children}</div>
       <div>footer</div>
     </>
   );

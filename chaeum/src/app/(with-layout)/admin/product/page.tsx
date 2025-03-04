@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import mockProducts from './mockProducts';
 import ProductList from './ProductList';
 import Pagination from '@/components/Pagination';
+import SearchIcon from 'public/icons/search.svg';
 
 const ITEMS_PER_PAGE = 5;
 
@@ -30,19 +31,24 @@ export default function ProductListPage() {
 
   return (
     <div>
-      <h1 className="text-4xl font-medium mb-4">상품 목록</h1>
-      <div className="flex justify-between items-center mb-4">
-        <input
-          value={search}
-          onChange={onSearchChange}
-          type="text"
-          placeholder="상품명 또는 상품코드 검색"
-          className="border px-4 py-2 rounded w-1/3"
-        />
-        <button className="border px-4 py-2 rounded">검색</button>
-        <button onClick={goToRegister} className="bg-black text-white px-4 py-2 rounded">
-          상품 등록하기
-        </button>
+      <div className="flex justify-between border-b-2 border-black mb-12">
+        <h1 className="text-4xl font-medium mb-6">상품 목록</h1>
+        <div className="flex justify-between items-center mb-6 gap-10">
+          <div className="flex items-center w-full justify-between border px-4 py-2 gap-4">
+            <input
+              value={search}
+              onChange={onSearchChange}
+              type="text"
+              placeholder="상품명 또는 상품코드 검색"
+              className="w-full focus:outline-none"
+            />
+            <SearchIcon width="27" height="27" fill="#8C8C8C" className="cursor-pointer" />
+          </div>
+          {/* <button className="border px-4 py-2">검색</button> */}
+          <button onClick={goToRegister} className="bg-black text-white w-60 px-7 py-3">
+            상품 등록하기
+          </button>
+        </div>
       </div>
       <ProductList products={displayedProducts} />
       <Pagination

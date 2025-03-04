@@ -9,30 +9,8 @@ import LogoutIcon from 'public/icons/logout.svg';
 import SignupIcon from 'public/icons/signup.svg';
 import CartIcon from 'public/icons/cart.svg';
 import MypageIcon from 'public/icons/mypage.svg';
-
-const categories = [
-  { name: '홈', route: '/', subcategories: [] },
-  {
-    name: '거실',
-    route: '/product/living',
-    subcategories: ['소파', '거실장', '거실테이블', '중문/홈도어'],
-  },
-  {
-    name: '침실',
-    route: '/admin/product/regist',
-    subcategories: ['침대', '옷장', '화장대', '수납장', '거울', '스툴'],
-  },
-  {
-    name: '주방',
-    route: '/product/kitchen',
-    subcategories: ['식탁', '식탁의자', '주방수납장', '싱크대'],
-  },
-  {
-    name: '오피스',
-    route: '/product/office',
-    subcategories: ['컴퓨터 책상', '의자', '수납장', '소파/테이블', 'ACC'],
-  },
-];
+import { categories } from '@/constants/categories';
+import MegaMenu from './MegaMenu';
 
 type NavButtonProps = {
   icon: React.ReactNode;
@@ -56,7 +34,7 @@ export default function Header() {
   const [disableHover, setDisableHover] = useState(false);
   const megaMenuRef = useRef<HTMLDivElement>(null);
   const currentPath = usePathname();
-  const isLoggedIn = true; // 추후 변경
+  const isLoggedIn = false; // 추후 변경
   const isMainPage = currentPath === '/' && !hoveredCategory;
 
   // 메가 메뉴 외부로 이동: 메가 메뉴 close
@@ -184,55 +162,22 @@ export default function Header() {
               isMainPage ? 'text-darkBrown placeholder-white' : ''
             }`}
           />
-          <SearchIcon fill={isMainPage ? 'white' : 'black'} className="cursor-pointer" />
+          <SearchIcon
+            width="28"
+            height="28"
+            fill={isMainPage ? 'white' : 'black'}
+            className="cursor-pointer"
+          />
         </div>
 
         <div className="flex space-x-8 text-base font-normal">{renderNavButtons()}</div>
       </div>
 
-      {/* 메가 메뉴 */}
       {hoveredCategory && (
-        <div
-          ref={megaMenuRef}
-          className="absolute left-0 w-full bg-white shadow-xl border-t z-50"
+        <MegaMenu
           onMouseEnter={() => setHoveredCategory(hoveredCategory)}
           onMouseLeave={() => setHoveredCategory(null)}
-        >
-          <div className="max-w-[80%] min-w-[1280px] mx-auto py-9">
-            <div className="grid grid-cols-5 gap-20">
-              {categories.map((category) => (
-                <div key={category.name} className="space-y-4">
-                  {category.name === '홈' ? (
-                    <Link href="/" className="text-lg font-semibold hover:underline">
-                      홈으로
-                    </Link>
-                  ) : (
-                    <Link
-                      href={category.route}
-                      className="text-lg font-semibold border-b pb-4 block hover:underline"
-                    >
-                      {category.name}
-                    </Link>
-                  )}
-                  <ul className="space-y-3">
-                    {category.subcategories.map((sub) => (
-                      <li
-                        key={sub}
-                        className="text-base font-medium text-darkGray hover:text-black hover:underline transition-colors cursor-pointer"
-                      >
-                        <Link
-                          href={`/category/${encodeURIComponent(category.name)}/${encodeURIComponent(sub)}`}
-                        >
-                          {sub}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        />
       )}
     </header>
   );
