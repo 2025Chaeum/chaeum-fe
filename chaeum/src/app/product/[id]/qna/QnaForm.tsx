@@ -8,7 +8,7 @@ export default function QnaForm() {
   const { productName, productImage } = useQna();
 
   return (
-    <div className="container mx-auto py-[100px]">
+    <>
       <h2 className="text-3xl font-bold mb-6 border-b pb-4">상품문의</h2>
 
       <div className="flex items-center pb-6 pl-10">
@@ -59,6 +59,6 @@ export default function QnaForm() {
           <Button>등록하기</Button>
         </div>
       </form>
-    </div>
+    </>
   );
 }
