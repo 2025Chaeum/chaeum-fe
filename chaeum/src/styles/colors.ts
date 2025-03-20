@@ -8,6 +8,7 @@ const colors = {
   darkGray: '#848484',
   deepBlue: '#01597D',
   darkBrown: '#4D4640',
+  deepGray: '#878787',
 };
 
 export default colors;
