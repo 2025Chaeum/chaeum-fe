@@ -2,6 +2,7 @@ import { fetchMockProductById } from '@/api/mock-product';
 import BasicInfo from './BasicInfo';
 import Content from './Content';
 import { ProductDetail } from '@/types/product-detail';
+import Header from '@/components/Header';
 
 interface ProductPageProps {
   params: { id: number };
@@ -12,17 +13,20 @@ export default async function page({ params }: ProductPageProps) {
   console.log(product);
 
   return (
-    <div className="container mx-auto px-[200px] py-[100px]">
-      <BasicInfo product={product} />
-      <Content
-        id={params.id}
-        name={product.name}
-        mainImage={product.mainImage}
-        detailImage={product.detailImages}
-        inquiries={product.inquiries}
-        reviewRating={product.reviewRating}
-        reviewList={product.reviewList}
-      />
-    </div>
+    <>
+      <Header />
+      <div className="container mx-auto px-[200px] py-[100px]">
+        <BasicInfo product={product} />
+        <Content
+          id={params.id}
+          name={product.name}
+          mainImage={product.mainImage}
+          detailImage={product.detailImages}
+          inquiries={product.inquiries}
+          reviewRating={product.reviewRating}
+          reviewList={product.reviewList}
+        />
+      </div>
+    </>
   );
 }
