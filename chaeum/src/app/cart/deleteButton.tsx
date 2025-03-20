@@ -7,7 +7,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-function Button({ children, color, onClick }: ButtonProps) {
+function DeleteButton({ children, color, onClick }: ButtonProps) {
   return (
     <button
       className={`w-[120px] py-2 px-4 mr-2 border bg-white transition duration-200 hover:opacity-80 
@@ -20,4 +20,4 @@ function Button({ children, color, onClick }: ButtonProps) {
   );
 }
 
-export default Button;
+export default DeleteButton;
