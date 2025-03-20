@@ -1,6 +1,7 @@
 'use client';
 
 import Button from './deleteButton';
+import CartList from './list/CartList';
 
 export default function ShoppingCart() {
   return (
@@ -9,6 +10,7 @@ export default function ShoppingCart() {
       <Button color="black">전체삭제</Button>
       <Button color="deepGray">선택삭제</Button>
       <hr className="my-4 border-black" />
+      <CartList />
     </div>
   );
 }
